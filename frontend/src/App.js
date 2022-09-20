@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
+import{BrowserRouter,Routes,Route} from "react-router-dom"
+import Header from "./components/Header"
+import Login from './components/Login';
+import { Signup } from "./components/Signup";
+import { Plugin } from "./components/Plugin";
+import swal from 'sweetalert2';
+window.Swal = swal;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <Header/>
+      <Routes>
+      <Route element={<Plugin></Plugin>} path="/"/>
+      
+
+         <Route element={<Login></Login>} path="/login"/>
+         <Route element={<Signup></Signup>} path="/signup"/>
+        
+         <Route element={<Plugin></Plugin>} path="/plugin"/>
+        
+        
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-
+   
 export default App;

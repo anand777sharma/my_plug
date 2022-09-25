@@ -3,7 +3,7 @@ import React from 'react'
 import Swal from 'sweetalert2';
 
 
-export const Plugin = () => {
+export const Plugin = ({owner}) => {
     const userSubmit = async (formdata) => {
         console.log(formdata);
         //1.url
@@ -40,7 +40,7 @@ export const Plugin = () => {
                         style={{ backgroundColor: "hsl(0, 0%, 96%)" }}>
 
                         <Formik
-                            initialValues={{ name: '', email: '', owner: '', createdAt: new Date() }}
+                            initialValues={{ name: '', email: '', owner: owner, createdAt: new Date() }}
                             onSubmit={userSubmit}>
                             {({ values, handleSubmit, handleChange }) => (
                                 <div className="container">
@@ -70,13 +70,13 @@ export const Plugin = () => {
                                                                         value={values.name}
                                                                         className="form-control"
                                                                     />
-                                                                     {/* onChange={handleChange} value={values.age} */}
+                                                                    {/* onChange={handleChange} value={values.age} */}
                                                                     <label className="form-label" htmlFor="form3Example1">
                                                                         Name
                                                                     </label>
                                                                 </div>
                                                             </div>
-                                                          
+
                                                         </div>
                                                         {/* Email input */}
                                                         <div className="form-outline mb-4">
@@ -91,7 +91,7 @@ export const Plugin = () => {
                                                                 Email address
                                                             </label>
                                                         </div>
-                                                    
+
                                                         {/* Submit button */}
                                                         <button
                                                             type="submit"
@@ -99,7 +99,7 @@ export const Plugin = () => {
                                                         >
                                                             Subscribe for news letter
                                                         </button>
-                                                     
+
                                                     </form>
                                                 </div>
                                             </div>

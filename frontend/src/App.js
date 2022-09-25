@@ -1,8 +1,8 @@
 import{BrowserRouter,Routes,Route} from "react-router-dom"
 import Header from "./components/Header"
 import Login from './components/Login';
-import { Signup } from "./components/Signup";
-import { Plugin } from "./components/Plugin";
+import Signup from "./components/Signup";
+import Plugin from "./components/Plugin";
 import swal from 'sweetalert2';
 import Dashboard from "./components/Dashboard";
 window.Swal = swal;

@@ -1,38 +1,38 @@
 // importing express
 
 const express = require('express');
-const userRouter= require('./routers/userRouter')
-const subscriberRouter= require('./routers/subscriberRouter')
+const userRouter = require('./routers/userRouter')
+const subscriberRouter = require('./routers/subscriberRouter')
 
-const cors=require('cors');
+const cors = require('cors');
 // initilizing express
 
-const app =express();
+const app = express();
 
 
-const port=5000;
+const port = 5000;
 
 // middleware -process the request but does not generate request or response
 //  this will parse JSON data to javascript
 app.use(express.json());
-app.use(cors({origin :['http://localhost:3000']}))
+app.use(cors({ origin: ['http://localhost:3000'] }))
 
 // middleware
-app.use('/user',userRouter);
-app.use('/sub',subscriberRouter);
+app.use('/user', userRouter);
+app.use('/sub', subscriberRouter);
 
 
 
 // to process request and to generate response - route
 // route
-app.get('/',(req,res)=>{
-res.send('response from express');
+app.get('/', (req, res) => {
+    res.send('response from express');
 });
 
 // route or end point
-app.get('/home',(req,res)=>{
+app.get('/home', (req, res) => {
     res.send('hello!!');
-    });
-app.listen(port,()=>{
-    console.log('server has started');
 });
+app.listen(port, () => {
+    console.log('server has started');
+})

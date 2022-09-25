@@ -4,6 +4,7 @@ import Login from './components/Login';
 import { Signup } from "./components/Signup";
 import { Plugin } from "./components/Plugin";
 import swal from 'sweetalert2';
+import Dashboard from "./components/Dashboard";
 window.Swal = swal;
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
          <Route element={<Signup></Signup>} path="/signup"/>
         
          <Route element={<Plugin></Plugin>} path="/plugin"/>
+         <Route element={<Dashboard />} path="/dashboard"/>
         
         
         </Routes>

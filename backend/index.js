@@ -2,7 +2,7 @@
 
 const express = require('express');
 const userRouter= require('./routers/userRouter')
-const subcriberRouter= require('./routers/subscriberRouter')
+const subscriberRouter= require('./routers/subscriberRouter')
 
 const cors=require('cors');
 // initilizing express
@@ -19,6 +19,7 @@ app.use(cors({origin :['http://localhost:3000']}))
 
 // middleware
 app.use('/user',userRouter);
+app.use('/sub',subscriberRouter);
 
 
 
